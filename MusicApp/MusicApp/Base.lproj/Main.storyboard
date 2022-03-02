@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="iIr-Ff-AmN">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home-->
+        <scene sceneID="gSe-de-Me7">
+            <objects>
+                <viewController id="MUH-AP-BMm" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tAC-pq-Cvp">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="headphones" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="VcU-dj-yqn">
+                                <rect key="frame" x="2" y="390.5" width="115" height="115"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="VcU-dj-yqn" secondAttribute="height" multiplier="1:1" id="PxQ-nm-paL"/>
+                                    <constraint firstAttribute="width" constant="115" id="aeV-bP-Wiw"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Favourite albums of all time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2g-8N-TYp">
+                                <rect key="frame" x="125" y="416" width="258" height="56"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <color key="textColor" systemColor="tertiarySystemBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="AR6-i6-0zT"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="VcU-dj-yqn" firstAttribute="leading" secondItem="AR6-i6-0zT" secondAttribute="leading" constant="2" id="4mh-xG-lW0"/>
+                            <constraint firstItem="VcU-dj-yqn" firstAttribute="centerY" secondItem="tAC-pq-Cvp" secondAttribute="centerY" id="AIw-6L-I3U"/>
+                            <constraint firstItem="o2g-8N-TYp" firstAttribute="leading" secondItem="VcU-dj-yqn" secondAttribute="trailing" constant="8" symbolic="YES" id="N3R-5W-j0z"/>
+                            <constraint firstItem="o2g-8N-TYp" firstAttribute="leading" secondItem="VcU-dj-yqn" secondAttribute="trailing" constant="8" symbolic="YES" id="Xtv-fs-d7a"/>
+                            <constraint firstItem="o2g-8N-TYp" firstAttribute="centerY" secondItem="AR6-i6-0zT" secondAttribute="centerY" id="dJO-KC-12s"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="music.house" catalog="system" selectedImage="music.house" id="oHT-fg-lh2"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rJe-Os-Zjj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1656.521739130435" y="-245.08928571428569"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="cZI-NC-3xD">
+            <objects>
+                <tabBarController id="iIr-Ff-AmN" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9vF-zI-hnX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="MUH-AP-BMm" kind="relationship" relationship="viewControllers" id="4YO-3E-wth"/>
+                        <segue destination="ieI-xZ-GKH" kind="relationship" relationship="viewControllers" id="UR7-dZ-nH4"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="La3-9D-ERM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="767" y="84"/>
+        </scene>
+        <!--Song List View Controller-->
+        <scene sceneID="2Nk-ea-jUK">
+            <objects>
+                <tableViewController id="NzS-lJ-jKo" customClass="SongListViewController" customModule="MusicApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="MIz-0w-cRc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SongListCell" rowHeight="100" id="3i4-of-L1x" customClass="SongListCell" customModule="MusicApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="100"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3i4-of-L1x" id="Mhx-y7-BnX">
+                                    <rect key="frame" x="0.0" y="0.0" width="385.5" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bu1-th-HL1">
+                                            <rect key="frame" x="20" y="0.0" width="100" height="100"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" secondItem="bu1-th-HL1" secondAttribute="height" multiplier="1:1" id="ZST-HK-lDP"/>
+                                                <constraint firstAttribute="width" constant="100" id="p3E-SI-2S1"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AlbumTitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oK3-ro-Tol">
+                                            <rect key="frame" x="128" y="20" width="122" height="33"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artist" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DDT-M0-3Dd">
+                                            <rect key="frame" x="128" y="61" width="41" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oK3-ro-Tol" secondAttribute="trailing" constant="20" symbolic="YES" id="6Ma-12-Bc7"/>
+                                        <constraint firstItem="bu1-th-HL1" firstAttribute="centerY" secondItem="Mhx-y7-BnX" secondAttribute="centerY" id="Hoe-aZ-cTc"/>
+                                        <constraint firstAttribute="bottom" secondItem="DDT-M0-3Dd" secondAttribute="bottom" constant="18" id="Hrp-fo-Gex"/>
+                                        <constraint firstItem="DDT-M0-3Dd" firstAttribute="leading" secondItem="oK3-ro-Tol" secondAttribute="leading" id="RvX-ko-HuK"/>
+                                        <constraint firstItem="oK3-ro-Tol" firstAttribute="leading" secondItem="bu1-th-HL1" secondAttribute="trailing" constant="8" symbolic="YES" id="UFc-Ez-FnH"/>
+                                        <constraint firstItem="DDT-M0-3Dd" firstAttribute="top" secondItem="oK3-ro-Tol" secondAttribute="bottom" constant="8" symbolic="YES" id="bz8-MY-uTB"/>
+                                        <constraint firstItem="oK3-ro-Tol" firstAttribute="top" secondItem="Mhx-y7-BnX" secondAttribute="top" constant="20" symbolic="YES" id="jwY-Ly-fr8"/>
+                                        <constraint firstItem="bu1-th-HL1" firstAttribute="leading" secondItem="Mhx-y7-BnX" secondAttribute="leading" constant="20" symbolic="YES" id="nyv-X4-F2e"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="DDT-M0-3Dd" secondAttribute="trailing" constant="20" symbolic="YES" id="wpc-UH-7jM"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="albumTitleLabel" destination="oK3-ro-Tol" id="obT-2U-bXV"/>
+                                    <outlet property="artistLabel" destination="DDT-M0-3Dd" id="x6K-Be-DmI"/>
+                                    <outlet property="coverImage" destination="bu1-th-HL1" id="gj0-HC-mVM"/>
+                                    <segue destination="FDu-ko-k8p" kind="show" identifier="ShowSongDetailSegue" id="iPx-YY-hfK"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="NzS-lJ-jKo" id="0JL-WL-ro2"/>
+                            <outlet property="delegate" destination="NzS-lJ-jKo" id="DXE-fp-eyR"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="Yk5-eJ-Vxa"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hAd-l2-5pf" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3476.811594202899" y="458.70535714285711"/>
+        </scene>
+        <!--About the album-->
+        <scene sceneID="XVy-CS-qxb">
+            <objects>
+                <tableViewController id="FDu-ko-k8p" customClass="SongDetailViewController" customModule="MusicApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Nrp-kw-ake">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <imageView key="tableHeaderView" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="record.circle.fill" catalog="system" id="iHf-ex-P0q">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="414"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <label key="tableFooterView" opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sdf-xo-l6a">
+                            <rect key="frame" x="0.0" y="574" width="414" height="141"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SongDetailCell" rowHeight="93" id="IiG-XQ-8cw" customClass="coverAboutCellImage" customModule="MusicApp" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="458.5" width="414" height="93"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" layoutMarginsFollowReadableWidth="YES" tableViewCell="IiG-XQ-8cw" id="YId-2V-mvK">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="93"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="aboutInfo" destination="sdf-xo-l6a" id="v8H-hf-xKo"/>
+                                    <outlet property="coverAbout" destination="iHf-ex-P0q" id="CXg-IH-uaE"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="FDu-ko-k8p" id="WXg-2K-zHG"/>
+                            <outlet property="delegate" destination="FDu-ko-k8p" id="Q7E-6e-xK6"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="About the album" id="4Ws-Ci-1b2"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="42B-76-UI6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4388.4057971014499" y="458.70535714285711"/>
+        </scene>
+        <!--Albums-->
+        <scene sceneID="oYd-e8-OYv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ieI-xZ-GKH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Albums" image="music.note.list" catalog="system" selectedImage="music.note.list" id="AvZ-Fv-quv"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="na1-af-ASF">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="8RO-KV-3U1" kind="relationship" relationship="rootViewController" id="SrT-bV-HoX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="odL-YF-t9q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1656.521739130435" y="458.70535714285711"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="3Sg-By-cCZ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8RO-KV-3U1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Ixp-zH-dRs"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="J0R-bd-0ZN">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="NzS-lJ-jKo" kind="relationship" relationship="rootViewController" id="Wqp-Ru-Hwe"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6Wx-Lh-8rI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2566.666666666667" y="458.70535714285711"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="headphones" catalog="system" width="128" height="121"/>
+        <image name="music.house" catalog="system" width="128" height="106"/>
+        <image name="music.note.list" catalog="system" width="128" height="115"/>
+        <image name="record.circle.fill" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
